@@ -162,3 +162,26 @@ person.constructor === Person.prototype.constructor;
 关于继承，前面提到“每一个对象都会从原型‘继承’属性”，实际上，继承是一个十分具有迷惑性的说法，引用《你不知道的 JavaScript》中的话，就是：
 
 > 继承意味着复制操作，然而 JavaScript 默认并不会复制对象的属性，相反，JavaScript 只是在两个对象之间创建一个关联，这样，一个对象就可以通过委托访问另一个对象的属性和函数，所以与其叫继承，委托的说法反而更准确些
+
+## 词法作用域和动态作用域
+
+### 作用域
+
+定义变量的区域
+
+- 静态作用域: 函数的作用域再函数定义时就确定了
+- 动态作用域：函数的作用域再函数调用时确定
+
+```js
+var value = 1;
+function foo() {
+  console.log(value);
+}
+
+function bar() {
+  var value = 2;
+  foo();
+}
+
+bar();
+```
