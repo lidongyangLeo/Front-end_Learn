@@ -1,0 +1,15 @@
+<script
+  type="text/javascript"
+  src="https://cdn.bootcdn.net/ajax/libs/jquery/3.6.1/jquery.js"
+></script>
+<script type="text/javascript" src="module.js"></script>
+<script type="text/javascript">
+  myModule.foo();
+  myModule.bar();
+
+  console.log(myModule.data); // undefined  不能访问模块内部数据
+  myModule.data = "xxxx"; //
+  myModule.foo(); // myModule.data = "xxxx"; // 修改无效
+
+  myModule2.foo1();
+</script>
